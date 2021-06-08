@@ -23,7 +23,7 @@ namespace API
         private readonly IConfiguration _config;
         public Startup(IConfiguration config)
         {
-            _config= config;
+            _config = config;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -51,6 +51,8 @@ namespace API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
 
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
