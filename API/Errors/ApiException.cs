@@ -6,7 +6,6 @@ namespace API.Errors
         {
             Details = details;
         }
-
         public string Details { get; set; } 
 
     }
